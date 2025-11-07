@@ -88,8 +88,8 @@ binary_sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: binary_sensor_defaults(icon = ICON_VALVE)
     },
-    0x8062: {
-        NASA_LABEL: "NASA_OUTDOOR_LOGICAL_DEFROST_STEP",
+    0x402E: {
+        NASA_LABEL: "ENUM_IN_STATE_DEFROST_MODE",
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: binary_sensor_defaults(icon = ICON_COMPRESSOR)
     },
