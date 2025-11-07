@@ -49,6 +49,11 @@ binary_sensors = {
             device_class = DEVICE_CLASS_HEAT
         )
     },
+    0x4089: {
+        NASA_LABEL: "ENUM_IN_STATE_WATER_PUMP",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: binary_sensor_defaults(icon = ICON_LIQUID)
+    },
     0x406C: {
         CONF_ICON: ICON_HEAT,
         NASA_LABEL: "ENUM_IN_BACKUP_HEATER",
@@ -82,6 +87,11 @@ binary_sensors = {
         NASA_LABEL: "ENUM_OUT_LOAD_4WAY",
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: binary_sensor_defaults(icon = ICON_VALVE)
+    },
+    0x8062: {
+        NASA_LABEL: "NASA_OUTDOOR_LOGICAL_DEFROST_STEP",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: binary_sensor_defaults(icon = ICON_COMPRESSOR)
     },
     0x80AF: {
         NASA_LABEL: "BASE_HEATER",
