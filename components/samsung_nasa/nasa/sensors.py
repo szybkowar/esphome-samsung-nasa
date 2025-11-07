@@ -205,12 +205,7 @@ sensors = {
     0x8061: {
         NASA_LABEL: "NASA_OUTDOOR_INDOOR_DEFROST_STEP",
         NASA_MODE: CONTROLLER_MODE_STATUS,
-        CONF_DEFAULTS: temp_sensor_defaults()
-    },
-    0x8062: {
-        NASA_LABEL: "NASA_OUTDOOR_LOGICAL_DEFROST_STEP",
-        NASA_MODE: CONTROLLER_MODE_STATUS,
-        CONF_DEFAULTS: temp_sensor_defaults()
+        CONF_DEFAULTS: sensor_defaults()
     },
     0x8204: {
         NASA_LABEL: "VAR_OUT_SENSOR_AIROUT",
