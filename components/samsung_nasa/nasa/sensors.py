@@ -18,6 +18,7 @@ from esphome.const import (
     UNIT_EMPTY,
     UNIT_PERCENT,
     UNIT_VOLT,
+    UNIT_HERTZ,
     CONF_ENTITY_CATEGORY,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_DEVICE_CLASS,
@@ -42,6 +43,7 @@ ICON_ALERT = "mdi:alert"
 ICON_HUMIDITY = "mdi:water-percent"
 ICON_FLOW = "mdi:water-circle"
 UNIT_LITRES_PER_MIN = "L/min"
+ICON_WAVE = "mdi:sine-wave"
 
 def sensor_defaults(
     unit_of_measurement = UNIT_EMPTY,
@@ -236,7 +238,12 @@ sensors = {
     0x8238: {
         NASA_LABEL: "VAR_OUT_CONTROL_CFREQ_COMP1",
         NASA_MODE: CONTROLLER_MODE_STATUS,
-        CONF_DEFAULTS: sensor_defaults()
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_HERTZ,
+            icon=ICON_WAVE,
+            device_class=DEVICE_CLASS_EMPTY,
+            state_class=STATE_CLASS_MEASUREMENT
+        )  
     },
     0x8413: {
         NASA_LABEL: "LVAR_OUT_CONTROL_WATTMETER_1W_1MIN_SUM",
