@@ -346,6 +346,41 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT
         )
     },
+    0x8240: {
+        NASA_LABEL: "NASA_OUTDOOR_ODU_CAPA1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_PERCENT,
+            icon=ICON_FLASH,
+            accuracy_decimals=0,
+            state_class=STATE_CLASS_MEASUREMENT
+        )
+    },
+    0x8254: {
+        NASA_LABEL: "VAR_OUT_SENSOR_IPM1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x827A: {
+        NASA_LABEL: "VAR_OUT_CONTROL_DSH1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x8280: {
+        NASA_LABEL: "VAR_OUT_SENSOR_TOP1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x829F: {
+        NASA_LABEL: "VAR_OUT_SENSOR_SAT_TEMP_HIGH_PRESSURE",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x82A0: {
+        NASA_LABEL: "VAR_OUT_SENSOR_SAT_TEMP_LOW_PRESSURE",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
     0x8411: {
         NASA_LABEL: "NASA_OUTDOOR_CONTROL_WATTMETER_1UNIT",
         NASA_MODE: CONTROLLER_MODE_STATUS,
