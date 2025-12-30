@@ -17,6 +17,7 @@ from esphome.const import (
     UNIT_KILOWATT_HOURS,
     UNIT_EMPTY,
     UNIT_PERCENT,
+    UNIT_REVOLUTIONS_PER_MINUTE,
     UNIT_VOLT,
     UNIT_HERTZ,
     CONF_ENTITY_CATEGORY,
@@ -33,7 +34,8 @@ from esphome.const import (
     CONF_LAMBDA,
     CONF_MULTIPLY,
     ICON_COUNTER,
-    ICON_EMPTY,    
+    ICON_EMPTY,
+    ICON_FAN,    
     ICON_THERMOMETER,
     ICON_FLASH
 )
@@ -191,7 +193,7 @@ sensors = {
             unit_of_measurement=UNIT_WATT,
             icon=ICON_FLASH,
             accuracy_decimals=1, 
-            device_class=DEVICE_CLASS_ENERGY,
+            device_class=DEVICE_CLASS_POWER,
             state_class=STATE_CLASS_MEASUREMENT,
             filters=[{CONF_LAMBDA: Lambda("return (int16_t)x;")}] 
         )
@@ -220,6 +222,11 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: temp_sensor_defaults()
     },
+    0x820A: {
+        NASA_LABEL: "VAR_OUT_SENSOR_DISCHARGE1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
     0x8217: {
         NASA_LABEL: "VAR_OUT_SENSOR_CT1",
         NASA_MODE: CONTROLLER_MODE_STATUS,
@@ -230,6 +237,11 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT,
             filters=[{CONF_MULTIPLY: 0.1}]
         )
+    },
+    0x8218: {
+        NASA_LABEL: "VAR_OUT_SENSOR_CONDOUT",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
     },
     0x8235: {
         NASA_LABEL: "VAR_OUT_ERROR_CODE",
@@ -250,6 +262,16 @@ sensors = {
             device_class=DEVICE_CLASS_EMPTY,
             state_class=STATE_CLASS_MEASUREMENT
         )  
+    },
+    0x823D: {
+        NASA_LABEL: "VAR_OUT_LOAD_FANRPM1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_REVOLUTIONS_PER_MINUTE,
+            icon=ICON_FAN,
+            accuracy_decimals=0, 
+            state_class=STATE_CLASS_MEASUREMENT
+        )
     },
     0x8413: {
         NASA_LABEL: "LVAR_OUT_CONTROL_WATTMETER_1W_1MIN_SUM",
