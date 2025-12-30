@@ -92,6 +92,16 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT        
         )
     },
+    0x4205: {
+        NASA_LABEL: "VAR_IN_TEMP_EVA_IN_F",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x4206: {
+        NASA_LABEL: "VAR_IN_TEMP_EVA_OUT_F",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
     0x4038: {
         NASA_LABEL: "ENUM_IN_STATE_HUMIDITY_PERCENT",
         NASA_MODE: CONTROLLER_MODE_STATUS,
