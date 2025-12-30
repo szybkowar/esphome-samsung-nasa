@@ -149,6 +149,11 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: sensor_defaults()
     },
+    0x4119: {
+        NASA_LABEL: "ENUM_IN_OPERATION_POWER_ZONE1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults()
+    },
     0x4236: {
         NASA_LABEL: "VAR_IN_TEMP_WATER_IN_F ",
         NASA_MODE: CONTROLLER_MODE_STATUS,
