@@ -91,6 +91,13 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT        
         )
     },
+    0x402E: {
+        NASA_LABEL: "ENUM_IN_STATE_DEFROST_MODE",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            icon=ICON_DEFROST
+        )
+    },
     0x4038: {
         NASA_LABEL: "ENUM_IN_STATE_HUMIDITY_PERCENT",
         NASA_MODE: CONTROLLER_MODE_STATUS,
