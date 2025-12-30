@@ -91,13 +91,6 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT        
         )
     },
-    0x402E: {
-        NASA_LABEL: "ENUM_IN_STATE_DEFROST_MODE",
-        NASA_MODE: CONTROLLER_MODE_STATUS,
-        CONF_DEFAULTS: sensor_defaults(
-            icon=ICON_DEFROST
-        )
-    },
     0x4038: {
         NASA_LABEL: "ENUM_IN_STATE_HUMIDITY_PERCENT",
         NASA_MODE: CONTROLLER_MODE_STATUS,
@@ -229,6 +222,28 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: temp_sensor_defaults()
     },
+    0x8206: {
+        NASA_LABEL: "VAR_OUT_SENSOR_HIGHPRESS",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement='kgf/cm²',
+            accuracy_decimals=1,
+            device_class=DEVICE_CLASS_PRESSURE,
+            state_class=STATE_CLASS_MEASUREMENT,
+            filters=[{CONF_MULTIPLY: 0.1}]
+        )
+    },
+    0x8208: {
+        NASA_LABEL: "VAR_OUT_SENSOR_LOWPRESS",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement='kgf/cm²',
+            accuracy_decimals=1,
+            device_class=DEVICE_CLASS_PRESSURE,
+            state_class=STATE_CLASS_MEASUREMENT,
+            filters=[{CONF_MULTIPLY: 0.1}]
+        )
+    },
     0x820A: {
         NASA_LABEL: "VAR_OUT_SENSOR_DISCHARGE1",
         NASA_MODE: CONTROLLER_MODE_STATUS,
@@ -250,6 +265,26 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: temp_sensor_defaults()
     },
+    0x821A: {
+        NASA_LABEL: "VAR_OUT_SENSOR_SUCTION",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x821C: {
+        NASA_LABEL: "VAR_OUT_SENSOR_DOUBLETUBE",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x821E: {
+        NASA_LABEL: "VAR_OUT_SENSOR_EVIIN",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
+    0x8220: {
+        NASA_LABEL: "VAR_OUT_SENSOR_EVIOUT",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
     0x8235: {
         NASA_LABEL: "VAR_OUT_ERROR_CODE",
         NASA_MODE: CONTROLLER_MODE_STATUS,
@@ -258,6 +293,28 @@ sensors = {
             icon=ICON_ALERT,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
             filters=[{CONF_DELTA: 1}]
+        )
+    },
+    0x8236: {
+        NASA_LABEL: "VAR_OUT_CONTROL_ORDER_CFREQ_COMP1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_HERTZ,
+            icon=ICON_SINE_WAVE,
+            accuracy_decimals=0,
+            device_class=DEVICE_CLASS_FREQUENCY,
+            state_class=STATE_CLASS_MEASUREMENT
+        )
+    },
+    0x8237: {
+        NASA_LABEL: "VAR_OUT_CONTROL_TARGET_CFREQ_COMP1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_HERTZ,
+            icon=ICON_SINE_WAVE,
+            accuracy_decimals=0,
+            device_class=DEVICE_CLASS_FREQUENCY,
+            state_class=STATE_CLASS_MEASUREMENT
         )
     },
     0x8238: {
@@ -277,6 +334,17 @@ sensors = {
             unit_of_measurement=UNIT_REVOLUTIONS_PER_MINUTE,
             icon=ICON_FAN,
             accuracy_decimals=0, 
+            state_class=STATE_CLASS_MEASUREMENT
+        )
+    },
+    0x8411: {
+        NASA_LABEL: "NASA_OUTDOOR_CONTROL_WATTMETER_1UNIT",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults(
+            unit_of_measurement=UNIT_WATT,
+            icon=ICON_FLASH,
+            accuracy_decimals=0, 
+            device_class=DEVICE_CLASS_POWER,
             state_class=STATE_CLASS_MEASUREMENT
         )
     },
