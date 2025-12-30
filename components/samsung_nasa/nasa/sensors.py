@@ -302,8 +302,7 @@ sensors = {
         CONF_DEFAULTS: sensor_defaults(
             unit_of_measurement=UNIT_HERTZ,
             icon=ICON_WAVE,
-            accuracy_decimals=0,
-            device_class=DEVICE_CLASS_FREQUENCY,
+            device_class=DEVICE_CLASS_EMPTY,
             state_class=STATE_CLASS_MEASUREMENT
         )
     },
@@ -313,8 +312,7 @@ sensors = {
         CONF_DEFAULTS: sensor_defaults(
             unit_of_measurement=UNIT_HERTZ,
             icon=ICON_WAVE,
-            accuracy_decimals=0,
-            device_class=DEVICE_CLASS_FREQUENCY,
+            device_class=DEVICE_CLASS_EMPTY,
             state_class=STATE_CLASS_MEASUREMENT
         )
     },
