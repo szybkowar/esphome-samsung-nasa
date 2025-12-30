@@ -301,7 +301,7 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: sensor_defaults(
             unit_of_measurement=UNIT_HERTZ,
-            icon=ICON_SINE_WAVE,
+            icon=ICON_WAVE,
             accuracy_decimals=0,
             device_class=DEVICE_CLASS_FREQUENCY,
             state_class=STATE_CLASS_MEASUREMENT
@@ -312,7 +312,7 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: sensor_defaults(
             unit_of_measurement=UNIT_HERTZ,
-            icon=ICON_SINE_WAVE,
+            icon=ICON_WAVE,
             accuracy_decimals=0,
             device_class=DEVICE_CLASS_FREQUENCY,
             state_class=STATE_CLASS_MEASUREMENT
