@@ -144,6 +144,11 @@ sensors = {
             state_class=STATE_CLASS_MEASUREMENT
         )
     },
+    0x4217: {
+        NASA_LABEL: "VAR_IN_EEV_VALUE_REAL_1",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: sensor_defaults()
+    },
     0x4236: {
         NASA_LABEL: "VAR_IN_TEMP_WATER_IN_F ",
         NASA_MODE: CONTROLLER_MODE_STATUS,
