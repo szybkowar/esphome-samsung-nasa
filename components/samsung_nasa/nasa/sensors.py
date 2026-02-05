@@ -179,6 +179,11 @@ sensors = {
         NASA_MODE: CONTROLLER_MODE_STATUS,
         CONF_DEFAULTS: temp_sensor_defaults()
     },
+    0x4204: {
+        NASA_LABEL: "VAR_IN_TEMP_MODIFIED",
+        NASA_MODE: CONTROLLER_MODE_STATUS,
+        CONF_DEFAULTS: temp_sensor_defaults()
+    },
     0x42D4: {
         NASA_LABEL: "VAR_IN_TEMP_ZONE2_F",
         NASA_MODE: CONTROLLER_MODE_STATUS,
